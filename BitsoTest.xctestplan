@@ -1,0 +1,45 @@
+{
+  "configurations" : [
+    {
+      "id" : "0580B535-5DEF-466F-B612-8F09F5DBEA03",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:BitsoTest.xcodeproj",
+      "identifier" : "663340572B77243D00089566",
+      "name" : "BitsoTest"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BitsoTest.xcodeproj",
+        "identifier" : "6633406D2B77243E00089566",
+        "name" : "BitsoTestTests"
+      }
+    },
+    {
+      "enabled" : false,
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:BitsoTest.xcodeproj",
+        "identifier" : "663340772B77243E00089566",
+        "name" : "BitsoTestUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:BitsoTest\/Modules\/BitsoNetworking",
+        "identifier" : "BitsoNetworkingTests",
+        "name" : "BitsoNetworkingTests"
+      }
+    }
+  ],
+  "version" : 1
+}

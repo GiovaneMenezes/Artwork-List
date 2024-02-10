@@ -10,12 +10,12 @@
 		6633405C2B77243D00089566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405B2B77243D00089566 /* AppDelegate.swift */; };
 		6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405D2B77243D00089566 /* SceneDelegate.swift */; };
 		663340602B77243D00089566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405F2B77243D00089566 /* ViewController.swift */; };
-		663340632B77243D00089566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663340612B77243D00089566 /* Main.storyboard */; };
 		663340652B77243E00089566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663340642B77243E00089566 /* Assets.xcassets */; };
 		663340682B77243E00089566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663340662B77243E00089566 /* LaunchScreen.storyboard */; };
 		663340732B77243E00089566 /* BitsoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663340722B77243E00089566 /* BitsoTestTests.swift */; };
 		6633407D2B77243E00089566 /* BitsoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407C2B77243E00089566 /* BitsoTestUITests.swift */; };
 		6633407F2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */; };
+		66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73AB2B78048500FFE2A2 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		6633405B2B77243D00089566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6633405D2B77243D00089566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6633405F2B77243D00089566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		663340622B77243D00089566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		663340642B77243E00089566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663340672B77243E00089566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663340692B77243E00089566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,9 @@
 		663340782B77243E00089566 /* BitsoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitsoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6633407C2B77243E00089566 /* BitsoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITests.swift; sourceTree = "<group>"; };
 		6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		66EE739D2B77D1C000FFE2A2 /* BitsoNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BitsoNetworking; sourceTree = "<group>"; };
+		66EE73AB2B78048500FFE2A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		66EE73AE2B780D5000FFE2A2 /* BitsoTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BitsoTest.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		6633404F2B77243D00089566 = {
 			isa = PBXGroup;
 			children = (
+				66EE73AE2B780D5000FFE2A2 /* BitsoTest.xctestplan */,
 				6633405A2B77243D00089566 /* BitsoTest */,
 				663340712B77243E00089566 /* BitsoTestTests */,
 				6633407B2B77243E00089566 /* BitsoTestUITests */,
@@ -99,10 +102,11 @@
 		6633405A2B77243D00089566 /* BitsoTest */ = {
 			isa = PBXGroup;
 			children = (
+				66EE73AA2B78045800FFE2A2 /* Helpers */,
+				66EE736D2B77CCE500FFE2A2 /* Modules */,
 				6633405B2B77243D00089566 /* AppDelegate.swift */,
 				6633405D2B77243D00089566 /* SceneDelegate.swift */,
 				6633405F2B77243D00089566 /* ViewController.swift */,
-				663340612B77243D00089566 /* Main.storyboard */,
 				663340642B77243E00089566 /* Assets.xcassets */,
 				663340662B77243E00089566 /* LaunchScreen.storyboard */,
 				663340692B77243E00089566 /* Info.plist */,
@@ -125,6 +129,22 @@
 				6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */,
 			);
 			path = BitsoTestUITests;
+			sourceTree = "<group>";
+		};
+		66EE736D2B77CCE500FFE2A2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				66EE739D2B77D1C000FFE2A2 /* BitsoNetworking */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		66EE73AA2B78045800FFE2A2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				66EE73AB2B78048500FFE2A2 /* Coordinator.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +253,6 @@
 			files = (
 				663340682B77243E00089566 /* LaunchScreen.storyboard in Resources */,
 				663340652B77243E00089566 /* Assets.xcassets in Resources */,
-				663340632B77243D00089566 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */,
 				663340602B77243D00089566 /* ViewController.swift in Sources */,
 				6633405C2B77243D00089566 /* AppDelegate.swift in Sources */,
 				6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */,
@@ -297,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		663340612B77243D00089566 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				663340622B77243D00089566 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		663340662B77243E00089566 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +458,6 @@
 				INFOPLIST_FILE = BitsoTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -474,7 +485,6 @@
 				INFOPLIST_FILE = BitsoTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
