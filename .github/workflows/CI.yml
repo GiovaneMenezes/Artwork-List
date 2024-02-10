@@ -13,7 +13,7 @@ jobs:
         set -o pipefail
         xcodebuild build-for-testing \
         -scheme BitsoTest \
-        -destination 'platform=iOS Simulator,name=iPhone 11 Pro' \
+        -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
         -derivedDataPath build \
         | xcpretty
     - name: Archive derived data artifacts
@@ -38,6 +38,6 @@ jobs:
         set -o pipefail
         xcodebuild test-without-building \
         -scheme BitsoTest \
-        -destination 'platform=iOS Simulator,name=iPhone 11 Pro' \
+        -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
         -derivedDataPath build \
         | xcpretty
