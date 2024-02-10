@@ -1,0 +1,43 @@
+name: Run CI
+on: 
+  pull_request
+jobs:
+  build:
+    name: Build Project
+    runs-on: macOS-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+    - name: Build
+      run: |
+        set -o pipefail
+        xcodebuild build-for-testing \
+        -scheme BitsoTest \
+        -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
+        -derivedDataPath build \
+        | xcpretty
+    - name: Archive derived data artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build
+
+  test:
+    name: Test Project
+    needs: build
+    runs-on: macOS-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v1
+    - name: Download derived data artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: build
+    - name: Test
+      run: |
+        set -o pipefail
+        xcodebuild test-without-building \
+        -scheme BitsoTest \
+        -destination 'platform=iOS Simulator,name=iPhone 14 Pro' \
+        -derivedDataPath build \
+        | xcpretty
