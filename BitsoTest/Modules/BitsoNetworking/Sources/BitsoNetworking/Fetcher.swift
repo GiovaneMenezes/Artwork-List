@@ -5,6 +5,8 @@ public protocol IFetcher {
 }
 
 public struct Fetcher: IFetcher {
+    public init() { }
+    
     public func fetch<T: Decodable>(endpoint: Endpoint, type: T.Type) async throws -> T {
         let (data, _) = try await URLSession.shared.data(for: endpoint.urlRequest())
         return try JSONDecoder().decode(T.self, from: data)
