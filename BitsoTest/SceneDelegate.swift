@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        let viewModel = ListViewModel(artworksRepository: ArtworksRepository())
+        window?.rootViewController = ListViewController(viewModel: viewModel)
         window?.makeKeyAndVisible()
     }
 
