@@ -13,7 +13,6 @@ class ListViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.refreshControl = refreshControl
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -37,7 +36,7 @@ class ListViewController: UIViewController {
         
         setViews()
         setObservables()
-        viewModel.fetchNextPage()
+        fetchNextPage()
     }
     
     private func setViews() {
@@ -62,16 +61,7 @@ class ListViewController: UIViewController {
             .sink { [weak self] _ in
                 guard let self else { return }
                 refreshControl.endRefreshing()
-                if (viewModel.oldArtsQuantity ?? 0) < viewModel.arts.count {
-                    tableView.beginUpdates()
-                    let rows = ((viewModel.oldArtsQuantity ?? 0)..<viewModel.arts.count).map {
-                        IndexPath(row: $0, section: 0)
-                    }
-                    tableView.insertRows(at: rows, with: .bottom)
-                    tableView.endUpdates()
-                } else {
-                    tableView.reloadData()
-                }
+                tableView.reloadData()
             }.store(in: &subscribers)
         
         viewModel
@@ -85,14 +75,22 @@ class ListViewController: UIViewController {
                     title: "Retry",
                     style: .default,
                     handler: {[weak self] _ in
-                        self?.viewModel.fetchNextPage()
+                        self?.fetchNextPage()
                     }))
                 present(alertVC, animated: true)
             }.store(in: &subscribers)
     }
     
+    func fetchNextPage() {
+        Task {
+            await viewModel.fetchNextPage()
+        }
+    }
+    
     @objc func pullToRefresh() {
-        viewModel.refreshList()
+        Task {
+            await viewModel.refreshList()
+        }
     }
 }
 
@@ -112,8 +110,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == tableView.numberOfRows(inSection: .zero) - 12 {
-            viewModel.fetchNextPage()
+        if indexPath.row > tableView.numberOfRows(inSection: .zero) - 10 && viewModel.currentPage != nil {
+            fetchNextPage()
         }
     }
 }

@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		6633405C2B77243D00089566 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405B2B77243D00089566 /* AppDelegate.swift */; };
 		6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405D2B77243D00089566 /* SceneDelegate.swift */; };
-		663340602B77243D00089566 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405F2B77243D00089566 /* ViewController.swift */; };
 		663340652B77243E00089566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663340642B77243E00089566 /* Assets.xcassets */; };
 		663340682B77243E00089566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663340662B77243E00089566 /* LaunchScreen.storyboard */; };
 		663340732B77243E00089566 /* BitsoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663340722B77243E00089566 /* BitsoTestTests.swift */; };
 		6633407D2B77243E00089566 /* BitsoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407C2B77243E00089566 /* BitsoTestUITests.swift */; };
 		6633407F2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */; };
+		667903EC2B7A77D300467377 /* ArtworksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667903EB2B7A77D300467377 /* ArtworksRepository.swift */; };
 		66C480BC2B78333C00843C7B /* ArtworksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66C480BB2B78333C00843C7B /* ArtworksAPI */; };
-		66C480BF2B78344800843C7B /* ArtworksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C480BE2B78344800843C7B /* ArtworksRepository.swift */; };
 		66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73AB2B78048500FFE2A2 /* Coordinator.swift */; };
 		66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B12B78216600FFE2A2 /* ListViewController.swift */; };
 		66EE73B42B7821C200FFE2A2 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B32B7821C200FFE2A2 /* ListViewModel.swift */; };
 		66EE73B72B78228300FFE2A2 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B62B78228300FFE2A2 /* Artwork.swift */; };
+		66F810902B7A87F5001A7A12 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8108F2B7A87F5001A7A12 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		663340582B77243D00089566 /* BitsoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitsoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6633405B2B77243D00089566 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6633405D2B77243D00089566 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6633405F2B77243D00089566 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		663340642B77243E00089566 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		663340672B77243E00089566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663340692B77243E00089566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,13 +52,14 @@
 		663340782B77243E00089566 /* BitsoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitsoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6633407C2B77243E00089566 /* BitsoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITests.swift; sourceTree = "<group>"; };
 		6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		66C480BE2B78344800843C7B /* ArtworksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepository.swift; sourceTree = "<group>"; };
+		667903EB2B7A77D300467377 /* ArtworksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepository.swift; sourceTree = "<group>"; };
 		66EE739D2B77D1C000FFE2A2 /* BitsoNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BitsoNetworking; sourceTree = "<group>"; };
 		66EE73AB2B78048500FFE2A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		66EE73AE2B780D5000FFE2A2 /* BitsoTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BitsoTest.xctestplan; sourceTree = "<group>"; };
 		66EE73B12B78216600FFE2A2 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		66EE73B32B7821C200FFE2A2 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		66EE73B62B78228300FFE2A2 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		66F8108F2B7A87F5001A7A12 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +112,12 @@
 		6633405A2B77243D00089566 /* BitsoTest */ = {
 			isa = PBXGroup;
 			children = (
-				66C480BD2B7833C900843C7B /* Repository */,
+				66EE73B52B78226500FFE2A2 /* Models */,
+				66C480BD2B7833C900843C7B /* Repositories */,
 				66EE73AF2B781D0500FFE2A2 /* Scenes */,
 				66EE736D2B77CCE500FFE2A2 /* Modules */,
 				66EE73AA2B78045800FFE2A2 /* Helpers */,
-				6633405B2B77243D00089566 /* AppDelegate.swift */,
-				6633405D2B77243D00089566 /* SceneDelegate.swift */,
-				6633405F2B77243D00089566 /* ViewController.swift */,
+				66F8108D2B7A87A4001A7A12 /* SupportingFiles */,
 				663340642B77243E00089566 /* Assets.xcassets */,
 				663340662B77243E00089566 /* LaunchScreen.storyboard */,
 				663340692B77243E00089566 /* Info.plist */,
@@ -143,12 +142,12 @@
 			path = BitsoTestUITests;
 			sourceTree = "<group>";
 		};
-		66C480BD2B7833C900843C7B /* Repository */ = {
+		66C480BD2B7833C900843C7B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				66C480BE2B78344800843C7B /* ArtworksRepository.swift */,
+				667903EB2B7A77D300467377 /* ArtworksRepository.swift */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		66EE736D2B77CCE500FFE2A2 /* Modules */ = {
@@ -178,7 +177,6 @@
 		66EE73B02B781D7F00FFE2A2 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				66EE73B52B78226500FFE2A2 /* Models */,
 				66EE73B12B78216600FFE2A2 /* ListViewController.swift */,
 				66EE73B32B7821C200FFE2A2 /* ListViewModel.swift */,
 			);
@@ -189,8 +187,18 @@
 			isa = PBXGroup;
 			children = (
 				66EE73B62B78228300FFE2A2 /* Artwork.swift */,
+				66F8108F2B7A87F5001A7A12 /* Page.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		66F8108D2B7A87A4001A7A12 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6633405B2B77243D00089566 /* AppDelegate.swift */,
+				6633405D2B77243D00089566 /* SceneDelegate.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,14 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66C480BF2B78344800843C7B /* ArtworksRepository.swift in Sources */,
 				66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */,
-				663340602B77243D00089566 /* ViewController.swift in Sources */,
 				66EE73B42B7821C200FFE2A2 /* ListViewModel.swift in Sources */,
+				66F810902B7A87F5001A7A12 /* Page.swift in Sources */,
 				6633405C2B77243D00089566 /* AppDelegate.swift in Sources */,
 				66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */,
 				66EE73B72B78228300FFE2A2 /* Artwork.swift in Sources */,
 				6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */,
+				667903EC2B7A77D300467377 /* ArtworksRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
