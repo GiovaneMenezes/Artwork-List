@@ -1,18 +1,23 @@
 import Foundation
 
+protocol IListViewModel {
+    
+}
+
 class ListViewModel {
     
-    @Published var hasInternetConnection: Bool = true
-    @Published var arts: [Artwork] = [Artwork]()
-    @Published var errorMessage: String?
+    @Published private(set) var hasInternetConnection: Bool = true
+    @Published private(set) var arts: [Artwork] = [Artwork]()
+    @Published private(set) var errorMessage: String?
     
-    var oldArtsQuantity: Int?
+    private var isLoading = false
     
-    var nextPageAvailable: Bool {
-        get async {
-            await artworksRepository.nextPageAvailable
-        }
+    private var nextPageAvailable: Bool {
+        guard let currentPage = currentPage else { return true }
+        return currentPage.currentPage < currentPage.totalPages
     }
+    
+    private(set) var currentPage: Pagination?
     
     private let artworksRepository: IArtworksRepository
     
@@ -20,35 +25,33 @@ class ListViewModel {
         self.artworksRepository = artworksRepository
     }
     
-    func fetchNextPage() {
-        Task {
-            do {
-                if await artworksRepository.nextPageAvailable {
-                    let artsCount = self.arts.count
-                    let nextPage = try await artworksRepository.getNextPage()
-                    if nextPage.count > 0 {
-                        self.oldArtsQuantity = artsCount + nextPage.count
-                        self.arts.append(contentsOf: nextPage)
-                    }
-                }
-            } catch {
-                self.presentError(error)
+    func fetchNextPage() async {
+        await fetchPage(currentPage)
+    }
+    
+    private func fetchPage(_ currentPage: Pagination?) async {
+        do {
+            guard nextPageAvailable, !isLoading else { return }
+            isLoading = true
+            let page = try await artworksRepository.getArtworksPage(page: (currentPage?.currentPage ?? 0) + 1)
+            if currentPage == nil {
+                arts = page.data
+            } else {
+                arts.append(contentsOf: page.data)
             }
+            self.currentPage = page.pagination
+            isLoading = false
+        } catch {
+            presentError(error)
+            isLoading = false
         }
     }
     
-    func refreshList() {
-        arts = []
-        Task {
-            await artworksRepository.resetPagination()
-            self.fetchNextPage()
-        }
+    func refreshList() async {
+        await fetchPage(nil)
     }
     
     private func presentError(_ error: Error) {
-        if let error = error as? ArtworksRepositoryError, error == .noMorePagesAvailable {
-            return
-        }
         errorMessage = error.localizedDescription
     }
     
