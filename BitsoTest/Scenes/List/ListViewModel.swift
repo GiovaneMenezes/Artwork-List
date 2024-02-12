@@ -12,11 +12,6 @@ class ListViewModel {
             await artworksRepository.nextPageAvailable
         }
     }
-    var currentPage: Int {
-        get async {
-            await artworksRepository.currentPage
-        }
-    }
     
     private let artworksRepository: IArtworksRepository
     

@@ -7,7 +7,6 @@ enum ArtworksRepositoryError {
 
 protocol IArtworksRepository {
     var nextPageAvailable: Bool { get async }
-    var currentPage: Int { get async }
     func resetPagination() async
     func getNextPage() async throws -> [Artwork]
 }
