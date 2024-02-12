@@ -81,7 +81,12 @@ class ListViewController: UIViewController {
             .sink { [weak self] message in
                 guard let self else { return }
                 let alertVC = UIAlertController(title: "Ops!!!", message: message, preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in self?.viewModel.fetchNextPage() }))
+                alertVC.addAction(UIAlertAction(
+                    title: "Retry",
+                    style: .default,
+                    handler: {[weak self] _ in
+                        self?.viewModel.fetchNextPage()
+                    }))
                 present(alertVC, animated: true)
             }.store(in: &subscribers)
     }
