@@ -34,5 +34,11 @@ let package = Package(
         .testTarget(
             name: "BitsoNetworkingTests",
             dependencies: ["BitsoNetworking"]),
+        .testTarget(
+            name: "ArtworksAPITests",
+            dependencies: ["BitsoNetworking", "ArtworksAPI"]),
+        .testTarget(
+            name: "ArtistsAPITests",
+            dependencies: ["BitsoNetworking", "ArtistsAPI"]),
     ]
 )
