@@ -94,12 +94,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentConfiguration = content
         return cell
     }
-}
-
-extension ListViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        if position > tableView.contentSize.height - tableView.frame.size.height * 2 {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == tableView.numberOfRows(inSection: .zero) - 12 {
             viewModel.fetchNextPage()
         }
     }
