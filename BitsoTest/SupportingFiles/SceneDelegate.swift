@@ -10,7 +10,11 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    
+    lazy var listCoordinator: ListCoordinator = {
+        let coordinator = ListCoordinator(navigationController: UINavigationController())
+        return coordinator
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,8 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let viewModel = ListViewModel(artworksRepository: ArtworksRepository())
-        window?.rootViewController = ListViewController(viewModel: viewModel)
+        window?.rootViewController = listCoordinator.start()
         window?.makeKeyAndVisible()
     }
 

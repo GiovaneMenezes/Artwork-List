@@ -1,14 +1,32 @@
 import Foundation
 
-protocol IListViewModel {
-    
+protocol ListViewModelNavigationDelegate: AnyObject {
+    func artworkItemDidSelect(item: Artwork)
 }
 
-class ListViewModel {
+protocol IListViewModel {
+    var hasInternetConnection: Bool { get }
+    var arts: [Artwork] { get }
+    var artsPublisher: Published<[Artwork]>.Publisher { get }
+    var errorMessage: String? { get }
+    var errorMessagePublisher: Published<String?>.Publisher { get }
+    var currentPage: Pagination? { get }
+    func fetchNextPage() async
+    func refreshList() async
+    func title(for indexPath: IndexPath) -> String
+    func subtitle(for indexPath: IndexPath) -> String
+    func selectItem(at indexPath: IndexPath)
+}
+
+class ListViewModel: IListViewModel {
     
     @Published private(set) var hasInternetConnection: Bool = true
+    
     @Published private(set) var arts: [Artwork] = [Artwork]()
+    var artsPublisher: Published<[Artwork]>.Publisher { $arts }
+    
     @Published private(set) var errorMessage: String?
+    var errorMessagePublisher: Published<String?>.Publisher { $errorMessage }
     
     private var isLoading = false
     
@@ -21,7 +39,9 @@ class ListViewModel {
     
     private let artworksRepository: IArtworksRepository
     
-    init(artworksRepository: IArtworksRepository) {
+    weak var navigationDelegate: ListViewModelNavigationDelegate?
+    
+    init(artworksRepository: IArtworksRepository = ArtworksRepository()) {
         self.artworksRepository = artworksRepository
     }
     
@@ -66,5 +86,9 @@ class ListViewModel {
             arts[indexPath.row].artistTitles.count > 0 ? arts[indexPath.row].artistTitles.joined(separator: ", ") : nil,
             arts[indexPath.row].dateDisplay
         ].compactMap { $0 }.joined(separator: " - ")
+    }
+    
+    func selectItem(at indexPath: IndexPath) {
+        navigationDelegate?.artworkItemDidSelect(item: arts[indexPath.row])
     }
 }
