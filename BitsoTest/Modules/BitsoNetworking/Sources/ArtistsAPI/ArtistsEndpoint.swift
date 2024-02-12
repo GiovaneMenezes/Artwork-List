@@ -26,7 +26,7 @@ extension ArtistsEndpoint: Endpoint {
     
     var task: BitsoNetworking.Task {
         switch self {
-        case .getAuthor(let id):
+        case .getAuthor:
             return .plainRequest
         }
     }

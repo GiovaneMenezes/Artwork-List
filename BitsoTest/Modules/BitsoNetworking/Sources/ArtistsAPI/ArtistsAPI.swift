@@ -1,7 +1,7 @@
 import BitsoNetworking
 
 public protocol IArtistsAPI {
-    func getArtist(id: Int) async throws -> InboundAuthor
+    func getArtist(id: Int) async throws -> InboundArtist
 }
 
 public struct ArtistsAPI: IArtistsAPI {
@@ -11,7 +11,7 @@ public struct ArtistsAPI: IArtistsAPI {
         self.fetcher = fetcher
     }
     
-    public func getArtist(id: Int) async throws -> InboundAuthor {
-        try await fetcher.fetch(endpoint: ArtistsEndpoint.getAuthor(id: id), type: InboundAuthor.self)
+    public func getArtist(id: Int) async throws -> InboundArtist {
+        try await fetcher.fetch(endpoint: ArtistsEndpoint.getAuthor(id: id), type: InboundArtist.self)
     }
 }

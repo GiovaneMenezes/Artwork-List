@@ -1,6 +1,6 @@
 import Foundation
 
-public struct InboundAuthor: Decodable {
+public struct InboundArtist: Decodable {
     public let id: Int
     public let birthDate: Int?
     public let deathDate: Int?

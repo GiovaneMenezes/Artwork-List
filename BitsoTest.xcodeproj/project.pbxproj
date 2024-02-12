@@ -21,6 +21,15 @@
 		66EE73B42B7821C200FFE2A2 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B32B7821C200FFE2A2 /* ListViewModel.swift */; };
 		66EE73B72B78228300FFE2A2 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B62B78228300FFE2A2 /* Artwork.swift */; };
 		66F810902B7A87F5001A7A12 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8108F2B7A87F5001A7A12 /* Page.swift */; };
+		66F810952B7ABDFD001A7A12 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F810942B7ABDFD001A7A12 /* Artist.swift */; };
+		66F810972B7ABEDB001A7A12 /* ArtistsAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F810962B7ABEDB001A7A12 /* ArtistsAPI */; };
+		66F810992B7ABEDB001A7A12 /* ArtworksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66F810982B7ABEDB001A7A12 /* ArtworksAPI */; };
+		66F8109B2B7ABEDB001A7A12 /* BitsoNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 66F8109A2B7ABEDB001A7A12 /* BitsoNetworking */; };
+		66F8109D2B7ABFF0001A7A12 /* ArtistsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8109C2B7ABFF0001A7A12 /* ArtistsRepository.swift */; };
+		66F8109F2B7AC2A0001A7A12 /* ListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F8109E2B7AC2A0001A7A12 /* ListCoordinator.swift */; };
+		66F810A22B7AC92C001A7A12 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F810A12B7AC92C001A7A12 /* DetailsViewController.swift */; };
+		66F810A42B7AC954001A7A12 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F810A32B7AC954001A7A12 /* DetailsViewModel.swift */; };
+		66F810A62B7AC978001A7A12 /* DetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F810A52B7AC978001A7A12 /* DetailsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +69,12 @@
 		66EE73B32B7821C200FFE2A2 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		66EE73B62B78228300FFE2A2 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		66F8108F2B7A87F5001A7A12 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		66F810942B7ABDFD001A7A12 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		66F8109C2B7ABFF0001A7A12 /* ArtistsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsRepository.swift; sourceTree = "<group>"; };
+		66F8109E2B7AC2A0001A7A12 /* ListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCoordinator.swift; sourceTree = "<group>"; };
+		66F810A12B7AC92C001A7A12 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		66F810A32B7AC954001A7A12 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		66F810A52B7AC978001A7A12 /* DetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +82,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66F8109B2B7ABEDB001A7A12 /* BitsoNetworking in Frameworks */,
+				66F810972B7ABEDB001A7A12 /* ArtistsAPI in Frameworks */,
 				66C480BC2B78333C00843C7B /* ArtworksAPI in Frameworks */,
+				66F810992B7ABEDB001A7A12 /* ArtworksAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				667903EB2B7A77D300467377 /* ArtworksRepository.swift */,
+				66F8109C2B7ABFF0001A7A12 /* ArtistsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -169,6 +188,7 @@
 		66EE73AF2B781D0500FFE2A2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				66F810A02B7AC906001A7A12 /* Details */,
 				66EE73B02B781D7F00FFE2A2 /* List */,
 			);
 			path = Scenes;
@@ -179,6 +199,7 @@
 			children = (
 				66EE73B12B78216600FFE2A2 /* ListViewController.swift */,
 				66EE73B32B7821C200FFE2A2 /* ListViewModel.swift */,
+				66F8109E2B7AC2A0001A7A12 /* ListCoordinator.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -188,6 +209,7 @@
 			children = (
 				66EE73B62B78228300FFE2A2 /* Artwork.swift */,
 				66F8108F2B7A87F5001A7A12 /* Page.swift */,
+				66F810942B7ABDFD001A7A12 /* Artist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +221,16 @@
 				6633405D2B77243D00089566 /* SceneDelegate.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		66F810A02B7AC906001A7A12 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				66F810A12B7AC92C001A7A12 /* DetailsViewController.swift */,
+				66F810A32B7AC954001A7A12 /* DetailsViewModel.swift */,
+				66F810A52B7AC978001A7A12 /* DetailsCoordinator.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +251,9 @@
 			name = BitsoTest;
 			packageProductDependencies = (
 				66C480BB2B78333C00843C7B /* ArtworksAPI */,
+				66F810962B7ABEDB001A7A12 /* ArtistsAPI */,
+				66F810982B7ABEDB001A7A12 /* ArtworksAPI */,
+				66F8109A2B7ABEDB001A7A12 /* BitsoNetworking */,
 			);
 			productName = BitsoTest;
 			productReference = 663340582B77243D00089566 /* BitsoTest.app */;
@@ -340,11 +375,17 @@
 				66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */,
 				66EE73B42B7821C200FFE2A2 /* ListViewModel.swift in Sources */,
 				66F810902B7A87F5001A7A12 /* Page.swift in Sources */,
+				66F810952B7ABDFD001A7A12 /* Artist.swift in Sources */,
+				66F810A42B7AC954001A7A12 /* DetailsViewModel.swift in Sources */,
 				6633405C2B77243D00089566 /* AppDelegate.swift in Sources */,
 				66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */,
 				66EE73B72B78228300FFE2A2 /* Artwork.swift in Sources */,
+				66F8109F2B7AC2A0001A7A12 /* ListCoordinator.swift in Sources */,
 				6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */,
+				66F8109D2B7ABFF0001A7A12 /* ArtistsRepository.swift in Sources */,
+				66F810A62B7AC978001A7A12 /* DetailsCoordinator.swift in Sources */,
 				667903EC2B7A77D300467377 /* ArtworksRepository.swift in Sources */,
+				66F810A22B7AC92C001A7A12 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +734,18 @@
 		66C480BB2B78333C00843C7B /* ArtworksAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ArtworksAPI;
+		};
+		66F810962B7ABEDB001A7A12 /* ArtistsAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ArtistsAPI;
+		};
+		66F810982B7ABEDB001A7A12 /* ArtworksAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ArtworksAPI;
+		};
+		66F8109A2B7ABEDB001A7A12 /* BitsoNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BitsoNetworking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

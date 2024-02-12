@@ -1,8 +1,8 @@
 import UIKit
 import Combine
 
-class ListViewController: UIViewController {
-    private var viewModel: ListViewModel
+final class ListViewController: UIViewController {
+    private var viewModel: IListViewModel
     
     private var subscribers: [AnyCancellable] = []
     
@@ -56,7 +56,7 @@ class ListViewController: UIViewController {
     
     private func setObservables() {
         viewModel
-            .$arts
+            .artsPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self else { return }
@@ -65,7 +65,7 @@ class ListViewController: UIViewController {
             }.store(in: &subscribers)
         
         viewModel
-            .$errorMessage
+            .errorMessagePublisher
             .dropFirst()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] message in
@@ -113,5 +113,9 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row > tableView.numberOfRows(inSection: .zero) - 10 && viewModel.currentPage != nil {
             fetchNextPage()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectItem(at: indexPath)
     }
 }
