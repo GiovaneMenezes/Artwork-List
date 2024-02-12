@@ -61,7 +61,7 @@ class ListViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
                 guard let self else { return }
-                self.refreshControl.endRefreshing()
+                refreshControl.endRefreshing()
                 if (viewModel.oldArtsQuantity ?? 0) < viewModel.arts.count {
                     tableView.beginUpdates()
                     let rows = ((viewModel.oldArtsQuantity ?? 0)..<viewModel.arts.count).map {
@@ -72,6 +72,17 @@ class ListViewController: UIViewController {
                 } else {
                     tableView.reloadData()
                 }
+            }.store(in: &subscribers)
+        
+        viewModel
+            .$errorMessage
+            .dropFirst()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] message in
+                guard let self else { return }
+                let alertVC = UIAlertController(title: "Ops!!!", message: message, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "Retry", style: .default, handler: {[weak self] _ in self?.viewModel.fetchNextPage() }))
+                present(alertVC, animated: true)
             }.store(in: &subscribers)
     }
     

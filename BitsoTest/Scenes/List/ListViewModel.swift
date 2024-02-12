@@ -4,6 +4,7 @@ class ListViewModel {
     
     @Published var hasInternetConnection: Bool = true
     @Published var arts: [Artwork] = [Artwork]()
+    @Published var errorMessage: String?
     
     var oldArtsQuantity: Int?
     
@@ -45,7 +46,10 @@ class ListViewModel {
     }
     
     private func presentError(_ error: Error) {
-        print(error)
+        if let error = error as? ArtworksRepositoryError, error == .noMorePagesAvailable {
+            return
+        }
+        errorMessage = error.localizedDescription
     }
     
     func title(for indexPath: IndexPath) -> String {
