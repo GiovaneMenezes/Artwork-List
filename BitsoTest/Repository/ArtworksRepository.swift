@@ -6,8 +6,9 @@ enum ArtworksRepositoryError {
 }
 
 protocol IArtworksRepository {
-    var nextPageAvailable: Bool { get }
-    func resetPagination()
+    var nextPageAvailable: Bool { get async }
+    var currentPage: Int { get async }
+    func resetPagination() async
     func getNextPage() async throws -> [Artwork]
 }
 
@@ -20,7 +21,7 @@ extension ArtworksRepositoryError: LocalizedError {
     }
 }
 
-class ArtworksRepository: IArtworksRepository {
+actor ArtworksRepository: IArtworksRepository {
     
     init(artworksAPI: IArtworksAPI = ArtworksAPI(), currentPage: Int = 1) {
         self.artworksAPI = artworksAPI
@@ -28,7 +29,7 @@ class ArtworksRepository: IArtworksRepository {
     }
     
     let artworksAPI: IArtworksAPI
-    private var currentPage = 1
+    private(set) var currentPage = 1
     private var totalPages: Int?
     private var loadingNextPage = false
     

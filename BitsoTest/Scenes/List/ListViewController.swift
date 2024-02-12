@@ -13,6 +13,7 @@ class ListViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.refreshControl = refreshControl
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     
@@ -59,8 +60,18 @@ class ListViewController: UIViewController {
             .$arts
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.refreshControl.endRefreshing()
-                self?.tableView.reloadData()
+                guard let self else { return }
+                self.refreshControl.endRefreshing()
+                if (viewModel.oldArtsQuantity ?? 0) < viewModel.arts.count {
+                    tableView.beginUpdates()
+                    let rows = ((viewModel.oldArtsQuantity ?? 0)..<viewModel.arts.count).map {
+                        IndexPath(row: $0, section: 0)
+                    }
+                    tableView.insertRows(at: rows, with: .bottom)
+                    tableView.endUpdates()
+                } else {
+                    tableView.reloadData()
+                }
             }.store(in: &subscribers)
     }
     

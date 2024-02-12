@@ -1,10 +1,22 @@
 import Foundation
 
 class ListViewModel {
+    
     @Published var hasInternetConnection: Bool = true
     @Published var arts: [Artwork] = [Artwork]()
     
-    var nextPageAvailable: Bool { artworksRepository.nextPageAvailable }
+    var oldArtsQuantity: Int?
+    
+    var nextPageAvailable: Bool {
+        get async {
+            await artworksRepository.nextPageAvailable
+        }
+    }
+    var currentPage: Int {
+        get async {
+            await artworksRepository.currentPage
+        }
+    }
     
     private let artworksRepository: IArtworksRepository
     
@@ -15,8 +27,13 @@ class ListViewModel {
     func fetchNextPage() {
         Task {
             do {
-                if artworksRepository.nextPageAvailable {
-                    self.arts.append(contentsOf: try await artworksRepository.getNextPage())
+                if await artworksRepository.nextPageAvailable {
+                    let artsCount = self.arts.count
+                    let nextPage = try await artworksRepository.getNextPage()
+                    if nextPage.count > 0 {
+                        self.oldArtsQuantity = artsCount + nextPage.count
+                        self.arts.append(contentsOf: nextPage)
+                    }
                 }
             } catch {
                 self.presentError(error)
@@ -26,8 +43,10 @@ class ListViewModel {
     
     func refreshList() {
         arts = []
-        artworksRepository.resetPagination()
-        fetchNextPage()
+        Task {
+            await artworksRepository.resetPagination()
+            self.fetchNextPage()
+        }
     }
     
     private func presentError(_ error: Error) {
