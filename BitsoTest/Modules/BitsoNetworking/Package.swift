@@ -19,6 +19,9 @@ let package = Package(
         .library(
             name: "ArtistsAPI",
             targets: ["ArtistsAPI"]),
+        .library(
+            name: "TestsSupport",
+            targets: ["TestsSupport"]),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -31,14 +34,17 @@ let package = Package(
         .target(
             name: "ArtistsAPI",
             dependencies: ["BitsoNetworking"]),
+        .target(
+            name: "TestsSupport",
+            dependencies: ["BitsoNetworking"]),
         .testTarget(
             name: "BitsoNetworkingTests",
             dependencies: ["BitsoNetworking"]),
         .testTarget(
             name: "ArtworksAPITests",
-            dependencies: ["BitsoNetworking", "ArtworksAPI"]),
+            dependencies: ["BitsoNetworking", "ArtworksAPI", "TestsSupport"]),
         .testTarget(
             name: "ArtistsAPITests",
-            dependencies: ["BitsoNetworking", "ArtistsAPI"]),
+            dependencies: ["BitsoNetworking", "ArtistsAPI", "TestsSupport"]),
     ]
 )
