@@ -24,7 +24,7 @@ final class ListCoordinator: Coordinator {
 }
 
 extension ListCoordinator: ListViewModelNavigationDelegate {
-    func artworkItemDidSelect(item: Artwork) {
+    @MainActor func artworkItemDidSelect(item: Artwork) {
         let detailsCoordinator = DetailsCoordinator(navigationController: navigationController, artwork: item)
         self.detailsCoordinator = detailsCoordinator
         _ = detailsCoordinator.start()

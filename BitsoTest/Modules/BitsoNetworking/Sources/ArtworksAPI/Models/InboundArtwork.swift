@@ -3,7 +3,7 @@ import Foundation
 public struct InboundArtwork: Decodable {
     public let id: Int
     public let imageID: String?
-    public let title: String?
+    public let title: String
     public let placeOfOrigin: String?
     public let dateDisplay: String?
     public let artistIDs: [Int]

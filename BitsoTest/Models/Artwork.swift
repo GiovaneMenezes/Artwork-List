@@ -3,7 +3,7 @@ import ArtworksAPI
 struct Artwork {
     let id: Int
     let imageID: String?
-    let title: String?
+    let title: String
     let placeOfOrigin: String?
     let dateDisplay: String?
     let artistIDs: [Int]

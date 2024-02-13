@@ -10,7 +10,7 @@ class DetailsCoordinator: Coordinator {
         self.artwork = artwork
     }
     
-    func start() -> UIViewController {
+    @MainActor func start() -> UIViewController {
         let viewModel = DetailsViewModel(artwork: artwork)
         let detailsViewController = DetailsViewController(viewModel: viewModel)
         navigationController.pushViewController(detailsViewController, animated: true)

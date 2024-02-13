@@ -12,6 +12,6 @@ public struct ArtistsAPI: IArtistsAPI {
     }
     
     public func getArtist(id: Int) async throws -> InboundArtist {
-        try await fetcher.fetch(endpoint: ArtistsEndpoint.getAuthor(id: id), type: InboundArtist.self)
+        try await fetcher.fetch(endpoint: ArtistsEndpoint.getAuthor(id: id), type: DefaultResponse<InboundArtist>.self).data
     }
 }
