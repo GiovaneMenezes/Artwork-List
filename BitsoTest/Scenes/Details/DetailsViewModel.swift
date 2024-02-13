@@ -5,6 +5,7 @@ import Foundation
     private let artWork: Artwork
     private var artists = [Artist]()
     @Published private(set) var isLoading: Bool = false
+    @Published private(set) var errorMessage: String?
     
     init(artwork: Artwork, artistsRepository: IArtistsRepository = ArtistsRepository()) {
         self.artistsRepository = artistsRepository
@@ -31,7 +32,7 @@ import Foundation
                 return artists
             }
         } catch {
-            print(error)
+            errorMessage = error.localizedDescription
         }
         
         isLoading = false
@@ -47,11 +48,7 @@ import Foundation
             DetailsArtistInfoModel(
                 id: $0.id,
                 title: $0.title.capitalized,
-                period: [
-                    $0.birthDate?.description,
-                    $0.deathDate?.description ?? ($0.birthDate != nil ? "Now" : nil)
-                ].compactMap { $0 }
-                    .joined(separator: " - "),
+                period: PeriodFormatter.period(start: $0.birthDate, end: $0.deathDate),
                 description: $0.description)
         }
     }

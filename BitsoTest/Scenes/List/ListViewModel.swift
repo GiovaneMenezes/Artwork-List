@@ -77,7 +77,7 @@ class ListViewModel: IListViewModel {
     
     func title(for indexPath: IndexPath) -> String {
         guard arts.indices.contains(indexPath.row) else { return "" }
-        return arts[indexPath.row].title ?? ""
+        return arts[indexPath.row].title
     }
     
     func subtitle(for indexPath: IndexPath) -> String {
