@@ -11,9 +11,9 @@
 		6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633405D2B77243D00089566 /* SceneDelegate.swift */; };
 		663340652B77243E00089566 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663340642B77243E00089566 /* Assets.xcassets */; };
 		663340682B77243E00089566 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663340662B77243E00089566 /* LaunchScreen.storyboard */; };
-		663340732B77243E00089566 /* BitsoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663340722B77243E00089566 /* BitsoTestTests.swift */; };
 		6633407D2B77243E00089566 /* BitsoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407C2B77243E00089566 /* BitsoTestUITests.swift */; };
 		6633407F2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */; };
+		66564C252B7C0A2A0077762F /* PeriodFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66564C242B7C0A2A0077762F /* PeriodFormatterTests.swift */; };
 		667903EC2B7A77D300467377 /* ArtworksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667903EB2B7A77D300467377 /* ArtworksRepository.swift */; };
 		667E76922B7AE946003D5B9C /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76912B7AE946003D5B9C /* DetailsView.swift */; };
 		669599412B7BBBD0006A9555 /* DetailsArtistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */; };
@@ -21,6 +21,16 @@
 		669599492B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */; };
 		6695994D2B7BC9EE006A9555 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695994C2B7BC9EE006A9555 /* ListElement.swift */; };
 		6695994F2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695994E2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift */; };
+		669599522B7BCFE6006A9555 /* ArtworksRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599512B7BCFE6006A9555 /* ArtworksRepositoryTests.swift */; };
+		669599552B7BD0CD006A9555 /* IArtworksAPISpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599542B7BD0CD006A9555 /* IArtworksAPISpy.swift */; };
+		669599572B7BD366006A9555 /* ErrorExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599562B7BD366006A9555 /* ErrorExample.swift */; };
+		669599592B7BD71D006A9555 /* ArtistsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599582B7BD71D006A9555 /* ArtistsRepositoryTests.swift */; };
+		6695995C2B7BD7C2006A9555 /* IArtistsAPISpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695995B2B7BD7C2006A9555 /* IArtistsAPISpy.swift */; };
+		669599602B7BECFE006A9555 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695995F2B7BECFE006A9555 /* DetailsViewModelTests.swift */; };
+		669599622B7BEF8B006A9555 /* IArtistsRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599612B7BEF8B006A9555 /* IArtistsRepositorySpy.swift */; };
+		669599652B7BF81E006A9555 /* PeriodFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599642B7BF81E006A9555 /* PeriodFormatter.swift */; };
+		669599682B7BFB38006A9555 /* ListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599672B7BFB38006A9555 /* ListViewModelTests.swift */; };
+		6695996B2B7BFC98006A9555 /* IArtworksRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695996A2B7BFC98006A9555 /* IArtworksRepositorySpy.swift */; };
 		66C480BC2B78333C00843C7B /* ArtworksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66C480BB2B78333C00843C7B /* ArtworksAPI */; };
 		66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73AB2B78048500FFE2A2 /* Coordinator.swift */; };
 		66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B12B78216600FFE2A2 /* ListViewController.swift */; };
@@ -63,10 +73,10 @@
 		663340672B77243E00089566 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		663340692B77243E00089566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6633406E2B77243E00089566 /* BitsoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitsoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		663340722B77243E00089566 /* BitsoTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestTests.swift; sourceTree = "<group>"; };
 		663340782B77243E00089566 /* BitsoTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitsoTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6633407C2B77243E00089566 /* BitsoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITests.swift; sourceTree = "<group>"; };
 		6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		66564C242B7C0A2A0077762F /* PeriodFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodFormatterTests.swift; sourceTree = "<group>"; };
 		667903EB2B7A77D300467377 /* ArtworksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepository.swift; sourceTree = "<group>"; };
 		667E76912B7AE946003D5B9C /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtistInfo.swift; sourceTree = "<group>"; };
@@ -74,6 +84,16 @@
 		669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtworkInfoModel.swift; sourceTree = "<group>"; };
 		6695994C2B7BC9EE006A9555 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
 		6695994E2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtistInfoModel.swift; sourceTree = "<group>"; };
+		669599512B7BCFE6006A9555 /* ArtworksRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepositoryTests.swift; sourceTree = "<group>"; };
+		669599542B7BD0CD006A9555 /* IArtworksAPISpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArtworksAPISpy.swift; sourceTree = "<group>"; };
+		669599562B7BD366006A9555 /* ErrorExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExample.swift; sourceTree = "<group>"; };
+		669599582B7BD71D006A9555 /* ArtistsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsRepositoryTests.swift; sourceTree = "<group>"; };
+		6695995B2B7BD7C2006A9555 /* IArtistsAPISpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArtistsAPISpy.swift; sourceTree = "<group>"; };
+		6695995F2B7BECFE006A9555 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		669599612B7BEF8B006A9555 /* IArtistsRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArtistsRepositorySpy.swift; sourceTree = "<group>"; };
+		669599642B7BF81E006A9555 /* PeriodFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodFormatter.swift; sourceTree = "<group>"; };
+		669599672B7BFB38006A9555 /* ListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelTests.swift; sourceTree = "<group>"; };
+		6695996A2B7BFC98006A9555 /* IArtworksRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IArtworksRepositorySpy.swift; sourceTree = "<group>"; };
 		66EE739D2B77D1C000FFE2A2 /* BitsoNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BitsoNetworking; sourceTree = "<group>"; };
 		66EE73AB2B78048500FFE2A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		66EE73AE2B780D5000FFE2A2 /* BitsoTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BitsoTest.xctestplan; sourceTree = "<group>"; };
@@ -147,7 +167,6 @@
 				66C480BD2B7833C900843C7B /* Repositories */,
 				66EE73AF2B781D0500FFE2A2 /* Scenes */,
 				66EE736D2B77CCE500FFE2A2 /* Modules */,
-				66EE73AA2B78045800FFE2A2 /* Helpers */,
 				66F8108D2B7A87A4001A7A12 /* SupportingFiles */,
 				663340642B77243E00089566 /* Assets.xcassets */,
 				663340662B77243E00089566 /* LaunchScreen.storyboard */,
@@ -159,7 +178,10 @@
 		663340712B77243E00089566 /* BitsoTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				663340722B77243E00089566 /* BitsoTestTests.swift */,
+				66564C222B7C09D40077762F /* Common */,
+				669599532B7BD059006A9555 /* TestingHelpers */,
+				669599502B7BCFC6006A9555 /* Repositories */,
+				6695995D2B7BECCF006A9555 /* Scenes */,
 			);
 			path = BitsoTestTests;
 			sourceTree = "<group>";
@@ -171,6 +193,22 @@
 				6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */,
 			);
 			path = BitsoTestUITests;
+			sourceTree = "<group>";
+		};
+		66564C222B7C09D40077762F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				66564C232B7C0A020077762F /* Formatters */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		66564C232B7C0A020077762F /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				66564C242B7C0A2A0077762F /* PeriodFormatterTests.swift */,
+			);
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		667E76902B7AE90E003D5B9C /* Views */ = {
@@ -195,6 +233,8 @@
 		6695994A2B7BC9B2006A9555 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				66EE73AB2B78048500FFE2A2 /* Coordinator.swift */,
+				66EE73AA2B78045800FFE2A2 /* Formatters */,
 				6695994B2B7BC9B9006A9555 /* UI */,
 			);
 			path = Common;
@@ -206,6 +246,52 @@
 				6695994C2B7BC9EE006A9555 /* ListElement.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		669599502B7BCFC6006A9555 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				669599512B7BCFE6006A9555 /* ArtworksRepositoryTests.swift */,
+				669599582B7BD71D006A9555 /* ArtistsRepositoryTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		669599532B7BD059006A9555 /* TestingHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				669599542B7BD0CD006A9555 /* IArtworksAPISpy.swift */,
+				6695995B2B7BD7C2006A9555 /* IArtistsAPISpy.swift */,
+				669599562B7BD366006A9555 /* ErrorExample.swift */,
+				669599612B7BEF8B006A9555 /* IArtistsRepositorySpy.swift */,
+				6695996A2B7BFC98006A9555 /* IArtworksRepositorySpy.swift */,
+			);
+			path = TestingHelpers;
+			sourceTree = "<group>";
+		};
+		6695995D2B7BECCF006A9555 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				669599662B7BFA60006A9555 /* List */,
+				6695995E2B7BECDC006A9555 /* Details */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6695995E2B7BECDC006A9555 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				6695995F2B7BECFE006A9555 /* DetailsViewModelTests.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		669599662B7BFA60006A9555 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				669599672B7BFB38006A9555 /* ListViewModelTests.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		66C480BD2B7833C900843C7B /* Repositories */ = {
@@ -225,12 +311,12 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		66EE73AA2B78045800FFE2A2 /* Helpers */ = {
+		66EE73AA2B78045800FFE2A2 /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
-				66EE73AB2B78048500FFE2A2 /* Coordinator.swift */,
+				669599642B7BF81E006A9555 /* PeriodFormatter.swift */,
 			);
-			path = Helpers;
+			path = Formatters;
 			sourceTree = "<group>";
 		};
 		66EE73AF2B781D0500FFE2A2 /* Scenes */ = {
@@ -423,6 +509,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */,
+				669599652B7BF81E006A9555 /* PeriodFormatter.swift in Sources */,
 				66EE73B42B7821C200FFE2A2 /* ListViewModel.swift in Sources */,
 				66F810902B7A87F5001A7A12 /* Page.swift in Sources */,
 				66F810952B7ABDFD001A7A12 /* Artist.swift in Sources */,
@@ -449,7 +536,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				663340732B77243E00089566 /* BitsoTestTests.swift in Sources */,
+				6695996B2B7BFC98006A9555 /* IArtworksRepositorySpy.swift in Sources */,
+				6695995C2B7BD7C2006A9555 /* IArtistsAPISpy.swift in Sources */,
+				669599522B7BCFE6006A9555 /* ArtworksRepositoryTests.swift in Sources */,
+				669599552B7BD0CD006A9555 /* IArtworksAPISpy.swift in Sources */,
+				669599602B7BECFE006A9555 /* DetailsViewModelTests.swift in Sources */,
+				669599622B7BEF8B006A9555 /* IArtistsRepositorySpy.swift in Sources */,
+				669599592B7BD71D006A9555 /* ArtistsRepositoryTests.swift in Sources */,
+				669599682B7BFB38006A9555 /* ListViewModelTests.swift in Sources */,
+				669599572B7BD366006A9555 /* ErrorExample.swift in Sources */,
+				66564C252B7C0A2A0077762F /* PeriodFormatterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

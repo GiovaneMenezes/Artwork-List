@@ -46,6 +46,13 @@
         "identifier" : "ArtworksAPITests",
         "name" : "ArtworksAPITests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:BitsoTest\/Modules\/BitsoNetworking",
+        "identifier" : "ArtistsAPITests",
+        "name" : "ArtistsAPITests"
+      }
     }
   ],
   "version" : 1
