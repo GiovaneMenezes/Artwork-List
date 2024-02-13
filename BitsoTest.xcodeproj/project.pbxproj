@@ -18,9 +18,9 @@
 		667E76922B7AE946003D5B9C /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76912B7AE946003D5B9C /* DetailsView.swift */; };
 		669599412B7BBBD0006A9555 /* DetailsArtistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */; };
 		669599432B7BBC02006A9555 /* DetailsArtworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599422B7BBC02006A9555 /* DetailsArtworkInfo.swift */; };
-		669599462B7BBDB2006A9555 /* DetailsArtistInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599452B7BBDB2006A9555 /* DetailsArtistInfoModel.swift */; };
 		669599492B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */; };
 		6695994D2B7BC9EE006A9555 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695994C2B7BC9EE006A9555 /* ListElement.swift */; };
+		6695994F2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695994E2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift */; };
 		66C480BC2B78333C00843C7B /* ArtworksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66C480BB2B78333C00843C7B /* ArtworksAPI */; };
 		66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73AB2B78048500FFE2A2 /* Coordinator.swift */; };
 		66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B12B78216600FFE2A2 /* ListViewController.swift */; };
@@ -71,9 +71,9 @@
 		667E76912B7AE946003D5B9C /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtistInfo.swift; sourceTree = "<group>"; };
 		669599422B7BBC02006A9555 /* DetailsArtworkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtworkInfo.swift; sourceTree = "<group>"; };
-		669599452B7BBDB2006A9555 /* DetailsArtistInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsArtistInfoModel.swift; path = ../../../../../DetailsArtistInfoModel.swift; sourceTree = "<group>"; };
 		669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtworkInfoModel.swift; sourceTree = "<group>"; };
 		6695994C2B7BC9EE006A9555 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
+		6695994E2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtistInfoModel.swift; sourceTree = "<group>"; };
 		66EE739D2B77D1C000FFE2A2 /* BitsoNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BitsoNetworking; sourceTree = "<group>"; };
 		66EE73AB2B78048500FFE2A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		66EE73AE2B780D5000FFE2A2 /* BitsoTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BitsoTest.xctestplan; sourceTree = "<group>"; };
@@ -186,8 +186,8 @@
 		669599442B7BBD9C006A9555 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				669599452B7BBDB2006A9555 /* DetailsArtistInfoModel.swift */,
 				669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */,
+				6695994E2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -432,10 +432,10 @@
 				66EE73B72B78228300FFE2A2 /* Artwork.swift in Sources */,
 				669599492B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift in Sources */,
 				66F8109F2B7AC2A0001A7A12 /* ListCoordinator.swift in Sources */,
-				669599462B7BBDB2006A9555 /* DetailsArtistInfoModel.swift in Sources */,
 				669599432B7BBC02006A9555 /* DetailsArtworkInfo.swift in Sources */,
 				6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */,
 				66F8109D2B7ABFF0001A7A12 /* ArtistsRepository.swift in Sources */,
+				6695994F2B7BCCD0006A9555 /* DetailsArtistInfoModel.swift in Sources */,
 				6695994D2B7BC9EE006A9555 /* ListElement.swift in Sources */,
 				669599412B7BBBD0006A9555 /* DetailsArtistInfo.swift in Sources */,
 				667E76922B7AE946003D5B9C /* DetailsView.swift in Sources */,
