@@ -2,6 +2,7 @@ import Foundation
 
 public struct InboundArtist: Decodable {
     public let id: Int
+    public let title: String
     public let birthDate: Int?
     public let deathDate: Int?
     public let isArtist: Bool
@@ -9,6 +10,7 @@ public struct InboundArtist: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case title
         case birthDate = "birth_date"
         case deathDate = "death_date"
         case isArtist = "is_artist"

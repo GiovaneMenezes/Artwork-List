@@ -15,6 +15,12 @@
 		6633407D2B77243E00089566 /* BitsoTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407C2B77243E00089566 /* BitsoTestUITests.swift */; };
 		6633407F2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */; };
 		667903EC2B7A77D300467377 /* ArtworksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667903EB2B7A77D300467377 /* ArtworksRepository.swift */; };
+		667E76922B7AE946003D5B9C /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667E76912B7AE946003D5B9C /* DetailsView.swift */; };
+		669599412B7BBBD0006A9555 /* DetailsArtistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */; };
+		669599432B7BBC02006A9555 /* DetailsArtworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599422B7BBC02006A9555 /* DetailsArtworkInfo.swift */; };
+		669599462B7BBDB2006A9555 /* DetailsArtistInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599452B7BBDB2006A9555 /* DetailsArtistInfoModel.swift */; };
+		669599492B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */; };
+		6695994D2B7BC9EE006A9555 /* ListElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6695994C2B7BC9EE006A9555 /* ListElement.swift */; };
 		66C480BC2B78333C00843C7B /* ArtworksAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 66C480BB2B78333C00843C7B /* ArtworksAPI */; };
 		66EE73AC2B78048500FFE2A2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73AB2B78048500FFE2A2 /* Coordinator.swift */; };
 		66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EE73B12B78216600FFE2A2 /* ListViewController.swift */; };
@@ -62,6 +68,12 @@
 		6633407C2B77243E00089566 /* BitsoTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITests.swift; sourceTree = "<group>"; };
 		6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitsoTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		667903EB2B7A77D300467377 /* ArtworksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworksRepository.swift; sourceTree = "<group>"; };
+		667E76912B7AE946003D5B9C /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtistInfo.swift; sourceTree = "<group>"; };
+		669599422B7BBC02006A9555 /* DetailsArtworkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtworkInfo.swift; sourceTree = "<group>"; };
+		669599452B7BBDB2006A9555 /* DetailsArtistInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailsArtistInfoModel.swift; path = ../../../../../DetailsArtistInfoModel.swift; sourceTree = "<group>"; };
+		669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsArtworkInfoModel.swift; sourceTree = "<group>"; };
+		6695994C2B7BC9EE006A9555 /* ListElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElement.swift; sourceTree = "<group>"; };
 		66EE739D2B77D1C000FFE2A2 /* BitsoNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BitsoNetworking; sourceTree = "<group>"; };
 		66EE73AB2B78048500FFE2A2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		66EE73AE2B780D5000FFE2A2 /* BitsoTest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = BitsoTest.xctestplan; sourceTree = "<group>"; };
@@ -130,6 +142,7 @@
 		6633405A2B77243D00089566 /* BitsoTest */ = {
 			isa = PBXGroup;
 			children = (
+				6695994A2B7BC9B2006A9555 /* Common */,
 				66EE73B52B78226500FFE2A2 /* Models */,
 				66C480BD2B7833C900843C7B /* Repositories */,
 				66EE73AF2B781D0500FFE2A2 /* Scenes */,
@@ -158,6 +171,41 @@
 				6633407E2B77243E00089566 /* BitsoTestUITestsLaunchTests.swift */,
 			);
 			path = BitsoTestUITests;
+			sourceTree = "<group>";
+		};
+		667E76902B7AE90E003D5B9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				667E76912B7AE946003D5B9C /* DetailsView.swift */,
+				669599402B7BBBD0006A9555 /* DetailsArtistInfo.swift */,
+				669599422B7BBC02006A9555 /* DetailsArtworkInfo.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		669599442B7BBD9C006A9555 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				669599452B7BBDB2006A9555 /* DetailsArtistInfoModel.swift */,
+				669599482B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6695994A2B7BC9B2006A9555 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6695994B2B7BC9B9006A9555 /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6695994B2B7BC9B9006A9555 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6695994C2B7BC9EE006A9555 /* ListElement.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		66C480BD2B7833C900843C7B /* Repositories */ = {
@@ -226,6 +274,8 @@
 		66F810A02B7AC906001A7A12 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				669599442B7BBD9C006A9555 /* Models */,
+				667E76902B7AE90E003D5B9C /* Views */,
 				66F810A12B7AC92C001A7A12 /* DetailsViewController.swift */,
 				66F810A32B7AC954001A7A12 /* DetailsViewModel.swift */,
 				66F810A52B7AC978001A7A12 /* DetailsCoordinator.swift */,
@@ -380,9 +430,15 @@
 				6633405C2B77243D00089566 /* AppDelegate.swift in Sources */,
 				66EE73B22B78216600FFE2A2 /* ListViewController.swift in Sources */,
 				66EE73B72B78228300FFE2A2 /* Artwork.swift in Sources */,
+				669599492B7BBE8A006A9555 /* DetailsArtworkInfoModel.swift in Sources */,
 				66F8109F2B7AC2A0001A7A12 /* ListCoordinator.swift in Sources */,
+				669599462B7BBDB2006A9555 /* DetailsArtistInfoModel.swift in Sources */,
+				669599432B7BBC02006A9555 /* DetailsArtworkInfo.swift in Sources */,
 				6633405E2B77243D00089566 /* SceneDelegate.swift in Sources */,
 				66F8109D2B7ABFF0001A7A12 /* ArtistsRepository.swift in Sources */,
+				6695994D2B7BC9EE006A9555 /* ListElement.swift in Sources */,
+				669599412B7BBBD0006A9555 /* DetailsArtistInfo.swift in Sources */,
+				667E76922B7AE946003D5B9C /* DetailsView.swift in Sources */,
 				66F810A62B7AC978001A7A12 /* DetailsCoordinator.swift in Sources */,
 				667903EC2B7A77D300467377 /* ArtworksRepository.swift in Sources */,
 				66F810A22B7AC92C001A7A12 /* DetailsViewController.swift in Sources */,

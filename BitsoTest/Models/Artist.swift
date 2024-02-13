@@ -2,6 +2,7 @@ import ArtistsAPI
 
 struct Artist {
     let id: Int
+    let title: String
     let birthDate: Int?
     let deathDate: Int?
     let isArtist: Bool
@@ -11,6 +12,7 @@ struct Artist {
 extension Artist {
     init(artist: InboundArtist) {
         self.id = artist.id
+        self.title = artist.title
         self.birthDate = artist.birthDate
         self.deathDate = artist.deathDate
         self.isArtist = artist.isArtist
