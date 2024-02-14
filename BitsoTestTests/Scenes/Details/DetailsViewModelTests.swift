@@ -10,6 +10,7 @@ class DetailsViewModelTests: XCTestCase {
             XCTAssertEqual(sut.getArtistsInfo().count, 0)
             XCTAssertFalse(artistsRepository.getArtistWasCalled)
             XCTAssertNil(sut.errorMessage)
+            XCTAssertTrue(sut.isLoading)
         }
         
         await sut.fetchArtistInformation()
@@ -18,6 +19,7 @@ class DetailsViewModelTests: XCTestCase {
             XCTAssertEqual(sut.getArtistsInfo().count, 1)
             XCTAssertTrue(artistsRepository.getArtistWasCalled)
             XCTAssertNil(sut.errorMessage)
+            XCTAssertFalse(sut.isLoading)
         }
     }
     
@@ -30,6 +32,7 @@ class DetailsViewModelTests: XCTestCase {
             XCTAssertEqual(sut.getArtistsInfo().count, 0)
             XCTAssertFalse(artistsRepository.getArtistWasCalled)
             XCTAssertNil(sut.errorMessage)
+            XCTAssertTrue(sut.isLoading)
         }
         
         await sut.fetchArtistInformation()
@@ -38,6 +41,7 @@ class DetailsViewModelTests: XCTestCase {
             XCTAssertEqual(sut.getArtistsInfo().count, 0)
             XCTAssertTrue(artistsRepository.getArtistWasCalled)
             XCTAssertEqual(sut.errorMessage, response.localizedDescription)
+            XCTAssertFalse(sut.isLoading)
         }
     }
     

@@ -4,7 +4,7 @@ import Foundation
     private let artistsRepository: IArtistsRepository
     private let artWork: Artwork
     private var artists = [Artist]()
-    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var isLoading: Bool = true
     @Published private(set) var errorMessage: String?
     
     init(artwork: Artwork, artistsRepository: IArtistsRepository = ArtistsRepository()) {

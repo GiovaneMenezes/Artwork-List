@@ -9,7 +9,7 @@ struct DetailsView: View {
                 if !viewModel.isLoading {
                     DetailsArtworkInfo(artwork: viewModel.getArtworkInfo())
                     let artists = viewModel.getArtistsInfo()
-                    if !artists.isEmpty {
+                    if !viewModel.isLoading {
                         VStack {
                             Text("Authors").font(.title3)
                             ForEach(artists, id: \.id) { artist in
@@ -17,6 +17,8 @@ struct DetailsView: View {
                                 DetailsArtistInfo(artist: artist)
                             }
                         }
+                    } else {
+                        ProgressView()
                     }
                     Spacer()
                 }

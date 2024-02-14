@@ -168,8 +168,6 @@
 				66EE73AF2B781D0500FFE2A2 /* Scenes */,
 				66EE736D2B77CCE500FFE2A2 /* Modules */,
 				66F8108D2B7A87A4001A7A12 /* SupportingFiles */,
-				663340642B77243E00089566 /* Assets.xcassets */,
-				663340662B77243E00089566 /* LaunchScreen.storyboard */,
 				663340692B77243E00089566 /* Info.plist */,
 			);
 			path = BitsoTest;
@@ -351,6 +349,8 @@
 		66F8108D2B7A87A4001A7A12 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				663340642B77243E00089566 /* Assets.xcassets */,
+				663340662B77243E00089566 /* LaunchScreen.storyboard */,
 				6633405B2B77243D00089566 /* AppDelegate.swift */,
 				6633405D2B77243D00089566 /* SceneDelegate.swift */,
 			);
