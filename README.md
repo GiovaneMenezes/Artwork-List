@@ -5,6 +5,7 @@
 iOS app to present the list of artwork using the ARTIC (Art Institute of Chicago) API. It contains two screens:
 - List
 - Details
+
 The app stores the first page when a new list is started. And in case of error on the api, it returns that stored page.
 
 ## Screenshots
