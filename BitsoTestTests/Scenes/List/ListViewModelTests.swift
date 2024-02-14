@@ -4,18 +4,14 @@ import XCTest
 class ListViewModelTests: XCTestCase {
     func test_fetchNextPage_successfulResponse() async throws {
         let artworksRepository = IArtworksRepositorySpy(getArtworksPageResponse: .success(page(currentPage: 1, totalPages: 3)))
-        let artworksPersistencyRepository = IArtworksPersistencyRepositorySpy()
-        let sut = ListViewModel(artworksRepository: artworksRepository, artworksPersistencyRepository: artworksPersistencyRepository)
+        let sut = ListViewModel(artworksRepository: artworksRepository)
         
         await sut.fetchNextPage()
         
         XCTAssertEqual(sut.arts.count, 1)
         XCTAssertEqual(sut.arts.first?.id, artwork.id)
         XCTAssert(artworksRepository.getArtworksPageWasCalled)
-        XCTAssertTrue(artworksPersistencyRepository.storeArtWorksWasCalled)
-        XCTAssertFalse(artworksPersistencyRepository.fetchArtWorksWasCalled)
         artworksRepository.reset()
-        artworksPersistencyRepository.reset()
         
         artworksRepository.getArtworksPageResponse = .success(page(currentPage: 2, totalPages: 3))
         
@@ -24,8 +20,6 @@ class ListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.arts.count, 2)
         XCTAssertEqual(sut.arts.first?.id, artwork.id)
         XCTAssert(artworksRepository.getArtworksPageWasCalled)
-        XCTAssertFalse(artworksPersistencyRepository.storeArtWorksWasCalled)
-        XCTAssertFalse(artworksPersistencyRepository.fetchArtWorksWasCalled)
         artworksRepository.reset()
         
         artworksRepository.getArtworksPageResponse = .success(page(currentPage: 3, totalPages: 3))
@@ -45,34 +39,15 @@ class ListViewModelTests: XCTestCase {
         artworksRepository.reset()
     }
     
-    func test_fetchNextPage_failureResponse_firstPageStored() async throws {
+    func test_fetchNextPage_failureResponse() async throws {
         let response = ErrorExample.example1
         let artworksRepository = IArtworksRepositorySpy(getArtworksPageResponse: .failure(response))
-        let artworksPersistencyRepository = IArtworksPersistencyRepositorySpy()
-        let sut = ListViewModel(artworksRepository: artworksRepository, artworksPersistencyRepository: artworksPersistencyRepository)
-        
-        artworksPersistencyRepository.fetchArtWorksResponse = .success([artwork, artwork])
+        let sut = ListViewModel(artworksRepository: artworksRepository)
         
         await sut.fetchNextPage()
         
-        XCTAssertNil(sut.errorMessage)
-        XCTAssertEqual(sut.arts.count, 2)
-        XCTAssertTrue(artworksPersistencyRepository.fetchArtWorksWasCalled)
-    }
-    
-    func test_fetchNextPage_failureResponse_firstPageNotStored() async throws {
-        let response = ErrorExample.example1
-        let artworksRepository = IArtworksRepositorySpy(getArtworksPageResponse: .failure(response))
-        let artworksPersistencyRepository = IArtworksPersistencyRepositorySpy()
-        let sut = ListViewModel(artworksRepository: artworksRepository, artworksPersistencyRepository: artworksPersistencyRepository)
-        
-        artworksPersistencyRepository.fetchArtWorksResponse = .failure(response)
-        
-        await sut.fetchNextPage()
-        
-        XCTAssertEqual(sut.errorMessage, response.localizedDescription)
+        XCTAssertEqual(sut.errorMessage, response.errorDescription)
         XCTAssertEqual(sut.arts.count, 0)
-        XCTAssertTrue(artworksPersistencyRepository.fetchArtWorksWasCalled)
     }
     
     func test_refreshList_successfulResponse() async throws {
@@ -100,8 +75,7 @@ class ListViewModelTests: XCTestCase {
     func test_refreshList_failureResponse() async throws {
         let response = ErrorExample.example1
         let artworksRepository = IArtworksRepositorySpy(getArtworksPageResponse: .success(page(currentPage: 1, totalPages: 3)))
-        let artworksPersistencyRepository = IArtworksPersistencyRepositorySpy()
-        let sut = ListViewModel(artworksRepository: artworksRepository, artworksPersistencyRepository: artworksPersistencyRepository)
+        let sut = ListViewModel(artworksRepository: artworksRepository)
         
         await sut.fetchNextPage()
         
@@ -119,7 +93,6 @@ class ListViewModelTests: XCTestCase {
         await sut.refreshList()
         
         XCTAssertEqual(sut.arts.count, 2)
-        XCTAssertFalse(artworksPersistencyRepository.fetchArtWorksWasCalled)
     }
     
     func test_titleAndSubtitle() async throws {
@@ -130,6 +103,20 @@ class ListViewModelTests: XCTestCase {
         
         XCTAssertEqual(sut.title(for: .init(row: 0, section: 0)), "Monalisa")
         XCTAssertEqual(sut.subtitle(for: .init(row: 0, section: 0)), "Davinci - 1500")
+    }
+    
+    func test_selectItem() async throws {
+        let navigationDelegate = ListViewModelNavigationDelegateSpy()
+        let artworksRepository = IArtworksRepositorySpy(getArtworksPageResponse: .success(page(currentPage: 1, totalPages: 3)))
+        let sut = ListViewModel(artworksRepository: artworksRepository)
+        sut.navigationDelegate = navigationDelegate
+        
+        await sut.fetchNextPage()
+        
+        sut.selectItem(at: .init(row: 0, section: 0))
+        
+        XCTAssertTrue(navigationDelegate.artworkItemDidSelectWasCalled)
+        XCTAssertEqual(navigationDelegate.artworkItemDidSelectItem?.title, artwork.title)
     }
 }
 

@@ -1,10 +1,10 @@
 import XCTest
 @testable import BitsoTest
 
-class ArtworksPersistencyRepositoryTests: XCTestCase {
+class ArtworksLocalDataSourceTests: XCTestCase {
     func test_fetchData_successfulResponse() throws {
         let dataPersistencyService = IDataPersistencyServiceSpy()
-        let sut = ArtworksPersistencyRepository(dataPersistencyService: dataPersistencyService)
+        let sut = ArtworksLocalDataSource(dataPersistencyService: dataPersistencyService)
         
         dataPersistencyService.fetchArtWorksResponse = .success([Artwork]())
         
@@ -16,7 +16,7 @@ class ArtworksPersistencyRepositoryTests: XCTestCase {
     func test_fetchData_failureResponse() {
         let response = ErrorExample.example1
         let dataPersistencyService = IDataPersistencyServiceSpy()
-        let sut = ArtworksPersistencyRepository(dataPersistencyService: dataPersistencyService)
+        let sut = ArtworksLocalDataSource(dataPersistencyService: dataPersistencyService)
         
         dataPersistencyService.fetchArtWorksResponse = .failure(response)
         
@@ -32,7 +32,7 @@ class ArtworksPersistencyRepositoryTests: XCTestCase {
     
     func test_storeData() throws {
         let dataPersistencyService = IDataPersistencyServiceSpy()
-        let sut = ArtworksPersistencyRepository(dataPersistencyService: dataPersistencyService)
+        let sut = ArtworksLocalDataSource(dataPersistencyService: dataPersistencyService)
         
         try sut.storeArtWorks([])
         

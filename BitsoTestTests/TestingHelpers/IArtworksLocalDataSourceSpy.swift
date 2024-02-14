@@ -1,6 +1,6 @@
 @testable import BitsoTest
 
-class IArtworksPersistencyRepositorySpy: IArtworksPersistencyRepository {
+class IArtworksLocalDataSourceSpy: IArtworksLocalDataSource {
     private(set) var storeArtWorksWasCalled = false
     private(set) var fetchArtWorksWasCalled = false
     

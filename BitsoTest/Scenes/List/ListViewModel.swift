@@ -38,16 +38,13 @@ final class ListViewModel: IListViewModel {
     private(set) var currentPage: Pagination?
     
     private let artworksRepository: IArtworksRepository
-    private let artworksPersistencyRepository: IArtworksPersistencyRepository
     
     weak var navigationDelegate: ListViewModelNavigationDelegate?
     
     init(
-        artworksRepository: IArtworksRepository = ArtworksRepository(),
-        artworksPersistencyRepository: IArtworksPersistencyRepository = ArtworksPersistencyRepository()
+        artworksRepository: IArtworksRepository = ArtworksRepository()
     ) {
         self.artworksRepository = artworksRepository
-        self.artworksPersistencyRepository = artworksPersistencyRepository
     }
     
     func fetchNextPage() async {
@@ -56,22 +53,17 @@ final class ListViewModel: IListViewModel {
     
     private func fetchPage(_ currentPage: Pagination?) async {
         do {
-            guard nextPageAvailable, !isLoading else { return }
+            guard (nextPageAvailable || currentPage == nil), !isLoading else { return }
             isLoading = true
             let page = try await artworksRepository.getArtworksPage(page: (currentPage?.currentPage ?? 0) + 1)
             if currentPage == nil {
                 arts = page.data
-                try? artworksPersistencyRepository.storeArtWorks(page.data)
             } else {
                 arts.append(contentsOf: page.data)
             }
             self.currentPage = page.pagination
         } catch {
-            if self.currentPage == nil, let arts = try? artworksPersistencyRepository.fetchArtWorks() {
-                self.arts = arts
-            } else {
-                presentError(error)
-            }
+            presentError(error)
         }
         isLoading = false
     }
