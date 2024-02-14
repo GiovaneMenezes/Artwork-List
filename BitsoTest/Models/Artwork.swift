@@ -1,6 +1,6 @@
 import ArtworksAPI
 
-struct Artwork {
+struct Artwork: Codable {
     let id: Int
     let imageID: String?
     let title: String

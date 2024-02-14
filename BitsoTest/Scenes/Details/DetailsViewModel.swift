@@ -32,10 +32,14 @@ import Foundation
                 return artists
             }
         } catch {
-            errorMessage = error.localizedDescription
+            setErrorMessage(error)
         }
         
         isLoading = false
+    }
+    
+    private func setErrorMessage(_ error: Error) {
+        errorMessage = "Sorry, the author's information could not be loaded."
     }
     
     private func getImageURL() -> URL? {

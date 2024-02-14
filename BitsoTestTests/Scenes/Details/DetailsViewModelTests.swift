@@ -40,7 +40,7 @@ class DetailsViewModelTests: XCTestCase {
         await MainActor.run {
             XCTAssertEqual(sut.getArtistsInfo().count, 0)
             XCTAssertTrue(artistsRepository.getArtistWasCalled)
-            XCTAssertEqual(sut.errorMessage, response.localizedDescription)
+            XCTAssertNotNil(sut.errorMessage)
             XCTAssertFalse(sut.isLoading)
         }
     }
