@@ -104,6 +104,20 @@ class ListViewModelTests: XCTestCase {
         XCTAssertEqual(sut.title(for: .init(row: 0, section: 0)), "Monalisa")
         XCTAssertEqual(sut.subtitle(for: .init(row: 0, section: 0)), "Davinci - 1500")
     }
+    
+    func test_selectItem() async throws {
+        let navigationDelegate = ListViewModelNavigationDelegateSpy()
+        let artworksRepository = IArtworksRepositorySpy(getArtworksPageResponse: .success(page(currentPage: 1, totalPages: 3)))
+        let sut = ListViewModel(artworksRepository: artworksRepository)
+        sut.navigationDelegate = navigationDelegate
+        
+        await sut.fetchNextPage()
+        
+        sut.selectItem(at: .init(row: 0, section: 0))
+        
+        XCTAssertTrue(navigationDelegate.artworkItemDidSelectWasCalled)
+        XCTAssertEqual(navigationDelegate.artworkItemDidSelectItem?.title, artwork.title)
+    }
 }
 
 extension ListViewModelTests {
