@@ -13,9 +13,6 @@ struct DetailsArtistInfo: View {
                 ListElement(title: "Period:", subtitle: period)
             }
             
-            if let description = artist.description {
-                ListElement(title: "Description:", subtitle: description)
-            }
         }
     }
 }
@@ -24,7 +21,6 @@ struct DetailsArtistInfo: View {
     let artist = DetailsArtistInfoModel(
         id: 123,
         title: "DaVinci",
-        period: "1500 - 1530",
-        description: nil)
+        period: "1500 - 1530")
     return DetailsArtistInfo(artist: artist)
 }

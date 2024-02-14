@@ -52,8 +52,7 @@ import Foundation
             DetailsArtistInfoModel(
                 id: $0.id,
                 title: $0.title.capitalized,
-                period: PeriodFormatter.period(start: $0.birthDate, end: $0.deathDate),
-                description: $0.description)
+                period: PeriodFormatter.period(start: $0.birthDate, end: $0.deathDate))
         }
     }
     
