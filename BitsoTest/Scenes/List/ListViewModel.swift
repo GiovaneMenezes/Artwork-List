@@ -18,7 +18,7 @@ protocol IListViewModel {
     func selectItem(at indexPath: IndexPath)
 }
 
-class ListViewModel: IListViewModel {
+final class ListViewModel: IListViewModel {
     
     @Published private(set) var hasInternetConnection: Bool = true
     
@@ -38,11 +38,16 @@ class ListViewModel: IListViewModel {
     private(set) var currentPage: Pagination?
     
     private let artworksRepository: IArtworksRepository
+    private let artworksPersistencyRepository: IArtworksPersistencyRepository
     
     weak var navigationDelegate: ListViewModelNavigationDelegate?
     
-    init(artworksRepository: IArtworksRepository = ArtworksRepository()) {
+    init(
+        artworksRepository: IArtworksRepository = ArtworksRepository(),
+        artworksPersistencyRepository: IArtworksPersistencyRepository = ArtworksPersistencyRepository()
+    ) {
         self.artworksRepository = artworksRepository
+        self.artworksPersistencyRepository = artworksPersistencyRepository
     }
     
     func fetchNextPage() async {
@@ -56,15 +61,19 @@ class ListViewModel: IListViewModel {
             let page = try await artworksRepository.getArtworksPage(page: (currentPage?.currentPage ?? 0) + 1)
             if currentPage == nil {
                 arts = page.data
+                try? artworksPersistencyRepository.storeArtWorks(page.data)
             } else {
                 arts.append(contentsOf: page.data)
             }
             self.currentPage = page.pagination
-            isLoading = false
         } catch {
-            presentError(error)
-            isLoading = false
+            if self.currentPage == nil, let arts = try? artworksPersistencyRepository.fetchArtWorks() {
+                self.arts = arts
+            } else {
+                presentError(error)
+            }
         }
+        isLoading = false
     }
     
     func refreshList() async {

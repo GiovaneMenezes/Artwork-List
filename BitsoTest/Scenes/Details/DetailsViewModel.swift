@@ -4,7 +4,7 @@ import Foundation
     private let artistsRepository: IArtistsRepository
     private let artWork: Artwork
     private var artists = [Artist]()
-    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var isLoading: Bool = true
     @Published private(set) var errorMessage: String?
     
     init(artwork: Artwork, artistsRepository: IArtistsRepository = ArtistsRepository()) {
@@ -32,10 +32,14 @@ import Foundation
                 return artists
             }
         } catch {
-            errorMessage = error.localizedDescription
+            setErrorMessage(error)
         }
         
         isLoading = false
+    }
+    
+    private func setErrorMessage(_ error: Error) {
+        errorMessage = "Sorry, the author's information could not be loaded."
     }
     
     private func getImageURL() -> URL? {

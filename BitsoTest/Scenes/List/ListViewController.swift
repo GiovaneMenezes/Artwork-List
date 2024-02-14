@@ -70,6 +70,7 @@ final class ListViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] message in
                 guard let self else { return }
+                refreshControl.endRefreshing()
                 let alertVC = UIAlertController(title: "Ops!!!", message: message, preferredStyle: .alert)
                 alertVC.addAction(UIAlertAction(
                     title: "Retry",
