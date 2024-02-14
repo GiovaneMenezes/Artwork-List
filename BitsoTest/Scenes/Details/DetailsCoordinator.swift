@@ -16,8 +16,4 @@ class DetailsCoordinator: Coordinator {
         navigationController.pushViewController(detailsViewController, animated: true)
         return navigationController
     }
-    
-    func stop() {
-        navigationController.popViewController(animated: true)
-    }
 }

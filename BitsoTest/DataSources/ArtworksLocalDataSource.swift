@@ -1,11 +1,11 @@
 import BitsoDataPersistency
 
-protocol IArtworksPersistencyRepository {
+protocol IArtworksLocalDataSource {
     func storeArtWorks(_ artWorks: [Artwork]) throws
     func fetchArtWorks() throws -> [Artwork]
 }
 
-struct ArtworksPersistencyRepository: IArtworksPersistencyRepository {
+struct ArtworksLocalDataSource: IArtworksLocalDataSource {
     
     private var dataPersistencyService: IDataPersistencyService
     

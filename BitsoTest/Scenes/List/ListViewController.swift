@@ -63,6 +63,7 @@ final class ListViewController: UIViewController {
                 refreshControl.endRefreshing()
                 tableView.reloadData()
             }.store(in: &subscribers)
+
         
         viewModel
             .errorMessagePublisher

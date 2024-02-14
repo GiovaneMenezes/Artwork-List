@@ -17,10 +17,6 @@ final class ListCoordinator: Coordinator {
         navigationController.pushViewController(listVC, animated: true)
         return navigationController
     }
-    
-    func stop() {
-        // No nescessary as it's not being called
-    }
 }
 
 extension ListCoordinator: ListViewModelNavigationDelegate {
