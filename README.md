@@ -39,7 +39,7 @@ The app stores the first page when a new list is started. And in case of error o
 ### Scene architetural Pattern
 
 MVVM (Model-View-ViewModel)
-Selected due the testability of the layers of the coordinator
+Selected due the testability of the business logic.
 
 ### Navigation
 
